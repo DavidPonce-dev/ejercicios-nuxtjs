@@ -1,7 +1,8 @@
 <template>
-  <h1>Login</h1>
+  <h1>Register</h1>
 </template>
-
+<script>
+</script>
 <style>
 
 </style>
