@@ -10,12 +10,12 @@
 export default {
   props: {
     width: {
-      type: Text,
+      type: String,
       required: false,
       default: '150px'
     },
     height: {
-      type: Text,
+      type: String,
       required: false,
       default: '200px'
     }
