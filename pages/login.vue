@@ -1,5 +1,5 @@
 <template>
-  <Window />
+  <h1>Login</h1>
 </template>
 
 <style>

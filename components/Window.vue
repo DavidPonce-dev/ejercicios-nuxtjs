@@ -1,22 +1,30 @@
 <template>
   <div
     class="window"
-    :style="{top: top, left: left}"
+    :style="{top, left, width, height}"
     @mousedown="mouseDown"
   />
 </template>
 
 <script>
-// eslint-disable-next-line
-import Vue from 'vue'
 export default {
+  props: {
+    width: {
+      type: Text,
+      required: false,
+      default: '150px'
+    },
+    height: {
+      type: Text,
+      required: false,
+      default: '200px'
+    }
+  },
   data: () => {
-    // eslint-disable-next-line
-    let datos = {
+    return {
       left: '0px',
       top: '100px'
     }
-    return datos
   },
   methods: {
     mouseDown (e) {
@@ -47,8 +55,6 @@ export default {
 
 <style>
   .window{
-    width: 300px;
-    height: 500px;
     border: black 1px solid;
     position: absolute;
   }
