@@ -22,7 +22,7 @@ export default {
   },
   data: () => {
     return {
-      left: '0px',
+      left: '50px',
       top: '100px'
     }
   },

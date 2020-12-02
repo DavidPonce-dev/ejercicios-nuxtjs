@@ -5,8 +5,11 @@
         <NuxtLink class="nav-link" to="/">
           Inicio
         </NuxtLink>
+        <NuxtLink class="nav-link" to="/windows">
+          Control de ventanas
+        </NuxtLink>
         <NuxtLink class="nav-link" to="/about">
-          Sobre nosotros
+          Sobre mi
         </NuxtLink>
 
         <b-nav-item-dropdown text="Lang" class="ml-auto">

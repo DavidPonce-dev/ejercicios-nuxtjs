@@ -1,0 +1,19 @@
+<template>
+  <div>
+    <Window
+      width="200px"
+      height="250px"
+    />
+    <Window
+      width="100px"
+      height="80px"
+    />
+    <Window
+      width="300px"
+      height="40px"
+    />
+  </div>
+</template>
+
+<style>
+</style>

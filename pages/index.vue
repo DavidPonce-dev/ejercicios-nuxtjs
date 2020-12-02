@@ -1,8 +1,5 @@
 <template>
-  <Window
-    width="200px"
-    height="250px"
-  />
+  <h1>Inicio</h1>
 </template>
 
 <style>
