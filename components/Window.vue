@@ -2,8 +2,12 @@
   <div
     class="window"
     :style="{top, left, width, height}"
+  >
+    <div
+      class="bar"
     @mousedown="mouseDown"
-  />
+    ></div>
+  </div>
 </template>
 
 <script>
@@ -18,12 +22,16 @@ export default {
       type: String,
       required: false,
       default: '200px'
-    }
-  },
-  data: () => {
-    return {
-      left: '50px',
-      top: '100px'
+    },
+    top: {
+      type: String,
+      required: false,
+      default: '200px'
+    },
+    left: {
+      type: String,
+      required: false,
+      default: '200px'
     }
   },
   methods: {
@@ -57,5 +65,9 @@ export default {
   .window{
     border: black 1px solid;
     position: absolute;
+  }
+  .bar{
+    height: 20px;
+    background-color: brown;
   }
 </style>
