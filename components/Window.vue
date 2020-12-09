@@ -9,6 +9,7 @@
         X
       </button>
     </div>
+    <div class="appContent" />
   </div>
 </template>
 
@@ -127,8 +128,8 @@ export default {
     padding: 0px 12px;
   }
   .close-btn:hover{
-      background-color: rgba(255, 0, 0, 0.8);
-    }
+    background-color: rgba(255, 0, 0, 0.8);
+  }
   .resizer{
     position: absolute;
     width: 5px;
@@ -153,5 +154,9 @@ export default {
     bottom: -1px;
     right: -1px;
     cursor: se-resize;
+  }
+  .appContent{
+    width: 100%;
+    height: calc(100% - 21px);
   }
 </style>
