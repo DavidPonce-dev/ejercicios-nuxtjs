@@ -4,7 +4,11 @@
     <div class="resizer ne" @mousedown="handleResize" />
     <div class="resizer sw" @mousedown="handleResize" />
     <div class="resizer se" @mousedown="handleResize" />
-    <div class="bar" @mousedown="handleDrag" />
+    <div class="bar" @mousedown="handleDrag">
+      <button class="close-btn" @click="handleClose">
+        X
+      </button>
+    </div>
   </div>
 </template>
 
@@ -33,11 +37,13 @@ export default {
     handleDrag (e) {
       let prevX = e.clientX
       let prevY = e.clientY
+      let newX, newY
 
       const mouseMove = (e) => {
-        const newX = prevX - e.clientX
-        const newY = prevY - e.clientY
         const rect = this.$el.getBoundingClientRect()
+
+        newX = prevX - e.clientX
+        newY = prevY - e.clientY
 
         this.left = rect.left - newX + 'px'
         this.top = rect.top - newY + 'px'
@@ -92,26 +98,41 @@ export default {
       }
       window.addEventListener('mousemove', mouseMove)
       window.addEventListener('mouseup', mouseUp)
+    },
+    handleClose (e) {
+      this.$destroy()
+      this.$el.parentNode.removeChild(this.$el)
     }
   }
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
   .window{
+    background-color:rgb(39, 39, 39) ;
     border: black 1px solid;
     position: absolute;
+    min-width: 100px;
+    min-height: 150px;
   }
   .bar{
-    height: 20px;
-    background-color: brown;
+    background-color:rgb(63, 63, 63) ;
+    height: 21px;
   }
+  .close-btn{
+    background-color: rgba(255, 255, 255, 0.3);
+    float: right;
+    border: none;
+    font-size:  14px;
+    padding: 0px 12px;
+  }
+  .close-btn:hover{
+      background-color: rgba(255, 0, 0, 0.8);
+    }
   .resizer{
     position: absolute;
     width: 5px;
     height: 5px;
-    border-radius: 5px;
-    background: black;
   }
   .resizer.nw{
     top: -1px;
