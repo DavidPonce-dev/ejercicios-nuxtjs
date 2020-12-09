@@ -107,7 +107,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
   .window{
     background-color:rgb(39, 39, 39) ;
     border: black 1px solid;
