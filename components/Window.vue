@@ -5,9 +5,7 @@
     <div class="resizer sw" @mousedown="handleResize" />
     <div class="resizer se" @mousedown="handleResize" />
     <div class="bar" @mousedown="handleDrag">
-      <button class="close-btn" @click="handleClose">
-        X
-      </button>
+      <button class="close-btn" title="x" @click="handleClose" />
     </div>
     <div class="appContent" />
   </div>
@@ -113,8 +111,8 @@ export default {
     background-color:rgb(39, 39, 39) ;
     border: black 1px solid;
     position: absolute;
-    min-width: 100px;
-    min-height: 150px;
+    min-width: 200px;
+    min-height: 300px;
   }
   .bar{
     background-color:rgb(63, 63, 63) ;

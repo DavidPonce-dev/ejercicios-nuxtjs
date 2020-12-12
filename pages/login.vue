@@ -1,5 +1,7 @@
 <template>
-  <h1>Login</h1>
+  <div class="login">
+    <Fingerprint />
+  </div>
 </template>
 
 <style>
