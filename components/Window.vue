@@ -7,13 +7,21 @@
     <div class="bar" @mousedown="handleDrag">
       <button class="close-btn" title="x" @click="handleClose" />
     </div>
-    <div class="appContent" />
+    <div ref="content" class="appContent" />
   </div>
 </template>
 
 <script>
 export default {
   props: {
+    app: {
+      type: Object,
+      required: true
+    },
+    title: {
+      type: String,
+      required: true
+    },
     width: {
       type: String,
       required: false,
@@ -31,6 +39,9 @@ export default {
       top: '100px',
       isResizing: false
     }
+  },
+  mounted () {
+    this.$refs.content.appendChild(this.$props.app)
   },
   methods: {
     handleDrag (e) {
