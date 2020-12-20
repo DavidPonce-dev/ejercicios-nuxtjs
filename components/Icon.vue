@@ -1,32 +1,31 @@
 <template>
-  <div>
-    <img class="icon" src="" alt="">
-  </div>
+  <button @dblclick="handleOpen">
+    <img src="../assets/Calc/icon.png" alt="">
+    <div>
+      Calculadora
+    </div>
+  </button>
 </template>
 
 <script>
 export default {
   props: {
-    titile: {
-      type: String,
-      required: true
-    },
-    icon: {
-      type: String,
+    open: {
+      type: Function,
       required: true
     }
   },
-  metaInfo () {
-    return {
-      title: this.title
+  methods: {
+    handleOpen () {
+      this.$props.open()
     }
   }
 }
 </script>
 
-<style>
-.icon {
-    width: 50px;
+<style scoped>
+button img {
+    width: 75px;
     height: 50px;
 }
 </style>

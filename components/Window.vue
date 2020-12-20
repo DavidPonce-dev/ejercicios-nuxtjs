@@ -5,21 +5,19 @@
     <div class="resizer sw" @mousedown="handleResize" />
     <div class="resizer se" @mousedown="handleResize" />
     <div class="bar" @mousedown="handleDrag">
-      <button class="close-btn" title="x" @click="handleClose" />
+      <button class="close-btn" @click="handleClose">
+        X
+      </button>
     </div>
-    <div ref="content" class="appContent" />
+    <div class="appContent" />
   </div>
 </template>
 
 <script>
 export default {
   props: {
-    app: {
-      type: Object,
-      required: true
-    },
-    title: {
-      type: String,
+    close: {
+      type: Function,
       required: true
     },
     width: {
@@ -39,9 +37,6 @@ export default {
       top: '100px',
       isResizing: false
     }
-  },
-  mounted () {
-    this.$refs.content.appendChild(this.$props.app)
   },
   methods: {
     handleDrag (e) {
@@ -109,9 +104,8 @@ export default {
       window.addEventListener('mousemove', mouseMove)
       window.addEventListener('mouseup', mouseUp)
     },
-    handleClose (e) {
-      this.$destroy()
-      this.$el.parentNode.removeChild(this.$el)
+    handleClose () {
+      this.$props.close()
     }
   }
 }

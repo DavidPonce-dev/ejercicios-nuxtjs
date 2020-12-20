@@ -1,15 +1,13 @@
 <template>
   <div>
-    <App app="Hola" title="Calculadora" icon="/Calc/icon.png" />
+    <App />
+    <App />
+    <App />
   </div>
 </template>
 
 <script>
 export default {
-  mounted () {
-  },
-  methods: {
-  }
 }
 </script>
 

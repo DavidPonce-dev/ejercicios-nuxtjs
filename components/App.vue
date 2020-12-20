@@ -1,29 +1,26 @@
 <template>
   <div class="app">
-    <Window app="app" :v-if="IsOpened" />
-    <Icon :v-else-if="!IsOpened" :icon="icon" title="title" />
+    <Window v-if="isOpen" :close="close" />
+    <Icon v-else :open="open" />
   </div>
 </template>
 
 <script>
+/* eslint-disable */
 export default {
-  props: {
-    app: {
-      type: Object,
-      required: true
-    },
-    titile: {
-      type: String,
-      required: true
-    },
-    icon: {
-      type: String,
-      required: true
-    }
+  props:{
   },
   data () {
     return {
-      isOpened: false
+      isOpen: true
+    }
+  },
+  methods: {
+    close () {
+      this.isOpen = false
+    },
+    open () {
+      this.isOpen = true
     }
   }
 }
